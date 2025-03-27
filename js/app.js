@@ -58,5 +58,3 @@
 // Scroll to section on link click
 
 // Set sections as active
-
-
