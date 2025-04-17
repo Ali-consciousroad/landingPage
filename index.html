@@ -120,9 +120,13 @@ body {
     </section>
   </main>
   <footer class="page__footer">
-    <p>&copy Udacity</p>
+    <p>&copy Consciousroad <span id="year"></span></p>
+    <p>All rights reserved</p>
   </footer>
   <script>
+    // Get the current year
+    document.getElementById("year").innerHTML = new Date().getFullYear(); 
+
     function myFunction() {
       var x = document.getElementById("navbar__list");
       if (x.className === "topnav") {
