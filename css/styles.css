@@ -221,12 +221,13 @@ section.your-active-class .landing__container::after {
 	}
 }
 
- /* Navbar */
+/* Navbar */
 .topnav {
     overflow: hidden;
     background: rgba(0, 13, 60, 1);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Softer shadow */
     transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for blending */
+    height: 60px; /* Consistent height to prevent shaking */
 }
 
 .topnav a {
@@ -286,6 +287,7 @@ section.your-active-class .landing__container::after {
     .topnav.responsive {
         position: relative;
         background: linear-gradient(0deg, rgba(60, 90, 100, 1) 0%, rgba(20, 40, 60, 1) 100%); /* Subtle gradient for responsive mode */
+        height: auto; /* Allow height to adjust dynamically */
     }
     .topnav.responsive a.icon {
         position: absolute;
@@ -305,8 +307,26 @@ section.your-active-class .landing__container::after {
     }
 }
 
-.topnav a.active {
-    background-color: #3C5A64; /* Muted blue-gray for the active link */
+/* Back to Top Button */
+#back-to-top {
+    position: fixed;
+    bottom: 20px;
+    left: 50%; /* Center horizontally */
+    transform: translateX(-50%); /* Adjust position to center */
+    z-index: 1000;
+    display: none; /* Hidden by default */
+    background-color: #3C5A64; /* Muted blue-gray */
     color: white;
-    font-weight: bold;
+    border: none;
+    border-radius: 50%;
+    padding: 10px 15px;
+    font-size: 18px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+#back-to-top:hover {
+    background-color: #528B8B; /* Slightly lighter on hover */
+    transform: translateX(-50%) scale(1.1); /* Keep centered while zooming */
 }

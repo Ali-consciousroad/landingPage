@@ -105,10 +105,45 @@ function updateActiveLink() {
     });
 }
 
-// Add scroll and click event listeners
-window.addEventListener("scroll", updateActiveLink);
-document.querySelectorAll(".topnav a").forEach((link) =>
-    link.addEventListener("click", updateActiveLink)
-);
+document.addEventListener("DOMContentLoaded", () => {
+    // Back to Top Button Logic
+    const backToTopButton = document.getElementById("back-to-top");
 
+    // Show or hide the button based on scroll position
+    window.addEventListener("scroll", () => {
+        backToTopButton.style.display = window.scrollY > 300 ? "block" : "none";
+    });
+
+    // Scroll to the top when the button is clicked
+    backToTopButton.addEventListener("click", () => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+
+    // Navbar Active Link Logic
+    const navLinks = document.querySelectorAll(".topnav a");
+
+    window.addEventListener("scroll", updateActiveLink);
+
+    navLinks.forEach((link) => {
+        link.addEventListener("click", updateActiveLink);
+    });
+
+    function updateActiveLink() {
+        const sections = document.querySelectorAll("section");
+
+        // Find the current section in the viewport
+        const currentSection = Array.from(sections).find((section) => {
+            const sectionTop = section.getBoundingClientRect().top;
+            return sectionTop >= 0 && sectionTop < window.innerHeight / 2;
+        });
+
+        // Update the active class on navbar links
+        navLinks.forEach((link) => {
+            link.classList.toggle(
+                "active",
+                currentSection && link.getAttribute("href") === `#${currentSection.id}`
+            );
+        });
+    }
+});
   
