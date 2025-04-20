@@ -8,6 +8,92 @@
  *
 */
 
+/* Hero Section */
+.main__hero {
+    position: relative;
+    width: 100%;
+    height: 100vh; /* Full screen height */
+    background-image: url('../images/heroImg.png'); /* Replace with your image URL */
+    background-size: cover; /* Ensure the image covers the entire section */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Prevent tiling */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff; /* Light text for contrast */
+    z-index: 1;
+}
+
+.main__hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Add a dark overlay for better text readability */
+    z-index: -1; /* Place the overlay behind the content */
+}
+
+.hero__content {
+    display: flex;
+    flex-direction: row; /* Two-column layout */
+    justify-content: space-between;
+    align-items: center;
+    width: 90%; /* Limit the width of the content */
+    max-width: 1200px; /* Prevent it from stretching too wide */
+}
+
+.hero__text {
+    flex: 1; /* Take up half the width */
+    max-width: 50%; /* Ensure it doesn't exceed half the screen */
+    text-align: left;
+}
+
+.hero__text h1 {
+    font-size: 3rem;
+    margin: 0 0 1rem;
+    font-family: 'Fira Sans', sans-serif;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5); /* Add a subtle shadow for better readability */
+}
+
+.hero__text .hero__description {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+    font-family: 'Merriweather', serif;
+    line-height: 1.6;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5); /* Add a subtle shadow for better readability */
+}
+
+.hero__cta {
+    display: inline-block;
+    padding: 0.8rem 2rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #fff;
+    background-color: #0056b3; /* Accessible blue for the button */
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.hero__cta:hover {
+    background-color: #003d80; /* Darker blue for hover state */
+    transform: scale(1.05); /* Slight zoom effect */
+}
+
+.hero__cta:focus {
+    outline: 2px solid #ffcc00; /* High-contrast yellow outline for focus */
+    outline-offset: 4px;
+}
+
+.hero__image {
+    flex: 1; /* Take up the remaining half of the width */
+    max-width: 50%; /* Ensure it doesn't exceed half the screen */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
 /* ---- Base Rules ---- */
 body {
@@ -57,7 +143,7 @@ main {
 
 section {
     position: relative;
-    min-height: 80vh;
+    min-height: 100vh;
 }
 
 
