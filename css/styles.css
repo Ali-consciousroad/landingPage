@@ -330,3 +330,76 @@ section.your-active-class .landing__container::after {
     background-color: #528B8B; /* Slightly lighter on hover */
     transform: translateX(-50%) scale(1.1); /* Keep centered while zooming */
 }
+
+/* Testimonial Carousel */
+.testimonials {
+    text-align: center;
+    padding: 20px; /* Reduced padding for smaller height */
+    background-color: #222; /* Dark background for better contrast */
+    color: #f9f9f9; /* Light text for readability */
+    height: 20vh; /* Similar height to the footer */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.testimonials h2 {
+    font-size: 1.5rem; /* Reduced font size for smaller height */
+    margin-bottom: 10px;
+    color: #ffffff; /* White heading for strong emphasis */
+}
+
+.carousel {
+    position: relative;
+    max-width: 600px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.testimonial {
+    display: none;
+    padding: 10px; /* Reduced padding for smaller height */
+    font-size: 1rem; /* Reduced font size */
+    line-height: 1.6; /* Improved line height for readability */
+    color: #f9f9f9; /* Light text for better contrast */
+    transition: opacity 0.5s ease-in-out;
+}
+
+.testimonial.active {
+    display: block;
+    opacity: 1;
+}
+
+.testimonial h4 {
+    margin-top: 10px; /* Reduced margin for smaller height */
+    font-size: 0.9rem; /* Reduced font size */
+    font-weight: bold;
+    color: #cccccc; /* Slightly lighter than main text for subtle emphasis */
+}
+
+.carousel-controls {
+    margin-top: 10px; /* Reduced margin for smaller height */
+}
+
+.carousel-controls button {
+    background-color: #0056b3; /* Accessible blue for buttons */
+    color: white;
+    border: none;
+    border-radius: 50%;
+    padding: 8px 12px; /* Reduced padding for smaller buttons */
+    font-size: 1rem; /* Reduced font size */
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.carousel-controls button:hover {
+    background-color: #003d80; /* Darker blue for hover state */
+    transform: scale(1.1); /* Slight zoom effect */
+}
+
+/* Accessibility: Focus styles for buttons */
+.carousel-controls button:focus {
+    outline: 2px solid #ffcc00; /* High-contrast yellow outline for focus */
+    outline-offset: 4px;
+}

@@ -146,4 +146,37 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+    const testimonials = document.querySelectorAll(".testimonial");
+    const prevButton = document.querySelector(".carousel-controls .prev");
+    const nextButton = document.querySelector(".carousel-controls .next");
+    let currentIndex = 0;
+
+    // Function to show the current testimonial
+    const showTestimonial = (index) => {
+        testimonials.forEach((testimonial, i) => {
+            testimonial.classList.toggle("active", i === index);
+        });
+    };
+
+    // Show the next testimonial
+    const showNextTestimonial = () => {
+        currentIndex = (currentIndex + 1) % testimonials.length;
+        showTestimonial(currentIndex);
+    };
+
+    // Show the previous testimonial
+    const showPrevTestimonial = () => {
+        currentIndex = (currentIndex - 1 + testimonials.length) % testimonials.length;
+        showTestimonial(currentIndex);
+    };
+
+    // Event listeners for carousel controls
+    nextButton.addEventListener("click", showNextTestimonial);
+    prevButton.addEventListener("click", showPrevTestimonial);
+
+    // Auto-rotate testimonials every 5 seconds
+    setInterval(showNextTestimonial, 5000);
+});
   
