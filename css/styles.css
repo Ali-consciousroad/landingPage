@@ -71,14 +71,14 @@
     font-size: 1.2rem;
     font-weight: bold;
     color: #fff;
-    background-color: #0056b3; /* Accessible blue for the button */
+    background-color: rgba(0, 13, 60, 1); /* Match the navbar color */
     text-decoration: none;
     border-radius: 5px;
     transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .hero__cta:hover {
-    background-color: #003d80; /* Darker blue for hover state */
+    background-color: rgba(20, 40, 60, 1); /* Slightly darker blue for hover state */
     transform: scale(1.05); /* Slight zoom effect */
 }
 
@@ -93,6 +93,15 @@
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
 
 /* ---- Base Rules ---- */
@@ -133,7 +142,8 @@ p {
 
 /* ---- Layout Rules ---- */
 main {
-    margin: 10vh 1em 10vh;
+    margin: 0;
+    padding-top: 2em;
 }
 
 .main-hero {
@@ -175,7 +185,7 @@ section {
 }
 
 /* Header Styles */
-.page__header {
+.page__header {/* Ensure consistent height */
     background: #fff;
     position: fixed;
     top: 0;
@@ -421,7 +431,7 @@ section.your-active-class .landing__container::after {
 .testimonials {
     text-align: center;
     padding: 20px; /* Reduced padding for smaller height */
-    background-color: #222; /* Dark background for better contrast */
+    background-color: #88CBAA; /* Uniform light green color */
     color: #f9f9f9; /* Light text for readability */
     height: 20vh; /* Similar height to the footer */
     display: flex;
@@ -469,7 +479,7 @@ section.your-active-class .landing__container::after {
 }
 
 .carousel-controls button {
-    background-color: #0056b3; /* Accessible blue for buttons */
+    background-color: rgba(0, 13, 60, 1); /* Match the navbar color */
     color: white;
     border: none;
     border-radius: 50%;
@@ -480,7 +490,7 @@ section.your-active-class .landing__container::after {
 }
 
 .carousel-controls button:hover {
-    background-color: #003d80; /* Darker blue for hover state */
+    background-color: rgba(20, 40, 60, 1); /* Slightly darker blue for hover state */
     transform: scale(1.1); /* Slight zoom effect */
 }
 
