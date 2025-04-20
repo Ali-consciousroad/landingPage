@@ -58,3 +58,19 @@
 // Scroll to section on link click
 
 // Set sections as active
+// Get the current year
+document.getElementById("year").textContent = new Date().getFullYear(); 
+
+// Add event listener to the icon
+document.querySelector(".icon").addEventListener("click", myFunction);
+
+// Function to toggle the responsive class on the navbar
+function myFunction() {
+  var x = document.getElementById("navbar__list");
+  /* The `classList.toggle("responsive")` method is used to dynamically add 
+  or remove the `"responsive"` class from the `navbar__list` element when the user clicks on the icon. */
+  x.classList.toggle("responsive");
+}
+
+
+  
