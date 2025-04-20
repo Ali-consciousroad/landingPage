@@ -199,14 +199,34 @@ section {
 }
 
 /* Footer Styles */
+/* Footer Styles */
 .page__footer {
-    background: #000;
+    background: #000; /* Dark background for contrast */
     padding: 3em;
+    color: #fff;
+    display: flex;
+    justify-content: space-between; /* Space between copyright and info */
+    align-items: center;
+    flex-wrap: wrap; /* Ensure responsiveness */
+}
+
+.page__footer p {
+    margin: 0.5em 0;
+    font-size: 0.9rem;
     color: #fff;
 }
 
-.page__footer p{
-    color: #fff;
+.footer__info {
+    text-align: right; /* Align the information to the right */
+}
+
+.footer__info a {
+    color: #88CBAA; /* Soft green for links */
+    text-decoration: none;
+}
+
+.footer__info a:hover {
+    text-decoration: underline; /* Underline on hover for better UX */
 }
 
 /* ---- Theme Rules ---- */
@@ -507,10 +527,4 @@ section.your-active-class .landing__container::after {
 .carousel-controls button:hover {
     background-color: rgba(20, 40, 60, 1); /* Slightly darker blue for hover state */
     transform: scale(1.1); /* Slight zoom effect */
-}
-
-/* Accessibility: Focus styles for buttons */
-.carousel-controls button:focus {
-    outline: 2px solid #88CBAA; /* Soft green outline for focus */
-    outline-offset: 4px;
 }
