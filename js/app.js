@@ -72,5 +72,43 @@ function myFunction() {
   x.classList.toggle("responsive");
 }
 
+// Add scroll event listener to update active navbar link
+window.addEventListener("scroll", function () {
+    updateActiveLink();
+});
+
+// Add click event listener to navbar links
+const navLinks = document.querySelectorAll(".topnav a");
+navLinks.forEach((link) => {
+    link.addEventListener("click", function () {
+        updateActiveLink();
+    });
+});
+
+// Function to update the active navbar link
+function updateActiveLink() {
+    const sections = document.querySelectorAll("section");
+    const navLinks = document.querySelectorAll(".topnav a");
+
+    // Find the current section in the viewport
+    const currentSection = Array.from(sections).find((section) => {
+        const sectionTop = section.getBoundingClientRect().top;
+        return sectionTop >= 0 && sectionTop < window.innerHeight / 2;
+    });
+
+    // Update the active class on navbar links
+    navLinks.forEach((link) => {
+        link.classList.toggle(
+            "active",
+            currentSection && link.getAttribute("href") === `#${currentSection.id}`
+        );
+    });
+}
+
+// Add scroll and click event listeners
+window.addEventListener("scroll", updateActiveLink);
+document.querySelectorAll(".topnav a").forEach((link) =>
+    link.addEventListener("click", updateActiveLink)
+);
 
   

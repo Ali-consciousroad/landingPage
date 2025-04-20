@@ -304,3 +304,9 @@ section.your-active-class .landing__container::after {
         color: #fff;
     }
 }
+
+.topnav a.active {
+    background-color: #3C5A64; /* Muted blue-gray for the active link */
+    color: white;
+    font-weight: bold;
+}
