@@ -11,7 +11,7 @@
 /* Hero Section */
 .main__hero {
     margin: 0;
-    padding: 0;
+    padding-top: 3.5em; /* Space above the hero section */
     position: relative;
     width: 100%;
     min-height: 100vh; /* Ensure the hero banner takes up the full viewport height */
@@ -86,7 +86,7 @@
 }
 
 .hero__cta:focus {
-    outline: 2px solid #ffcc00; /* High-contrast yellow outline for focus */
+    outline: 2px solid #88CBAA; /* Soft green outline for focus */
     outline-offset: 4px;
 }
 
@@ -132,7 +132,7 @@ h1 {
 }
 
 h2 {
-    border-bottom: 1px solid #cc1;
+    border-bottom: 1px solid #88CBAA; /* Soft green border */
     font-family: 'Oxygen', Sans-Serif;
     font-size: 3em;
     color: #fff;
@@ -353,6 +353,11 @@ section.your-active-class .landing__container::after {
     font-weight: bold;
 }
 
+.topnav a:focus {
+    outline: 2px solid #88CBAA; /* Soft green outline for focus */
+    outline-offset: 4px;
+}
+
 /* Transparent Navbar for Section 1 */
 .topnav.transparent {
     background: transparent; /* Transparent background */
@@ -432,6 +437,11 @@ section.your-active-class .landing__container::after {
     transform: translateX(-50%) scale(1.1); /* Keep centered while zooming */
 }
 
+#back-to-top:focus {
+    outline: 2px solid #88CBAA; /* Soft green outline for focus */
+    outline-offset: 4px;
+}
+
 /* Testimonial Carousel */
 .testimonials {
     text-align: center;
@@ -501,6 +511,6 @@ section.your-active-class .landing__container::after {
 
 /* Accessibility: Focus styles for buttons */
 .carousel-controls button:focus {
-    outline: 2px solid #ffcc00; /* High-contrast yellow outline for focus */
+    outline: 2px solid #88CBAA; /* Soft green outline for focus */
     outline-offset: 4px;
 }
